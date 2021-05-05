@@ -1,0 +1,205 @@
+Microsoft Windows [Version 10.0.19042.928]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\mswei>cd desktop
+
+C:\Users\mswei\Desktop>cd python_stack
+
+C:\Users\mswei\Desktop\python_stack>cd my_environments
+
+C:\Users\mswei\Desktop\python_stack\my_environments>pip list
+Package    Version
+---------- -------
+pip        21.1.1
+setuptools 56.0.0
+
+C:\Users\mswei\Desktop\python_stack\my_environments>python -m venu Test Env
+C:\Users\mswei\AppData\Local\Programs\Python\Python39\python.exe: No module named venu
+
+C:\Users\mswei\Desktop\python_stack\my_environments>python -m venv TestEnv
+
+C:\Users\mswei\Desktop\python_stack\my_environments>source TestEnv/bin/activate
+'source' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\mswei\Desktop\python_stack\my_environments>call TestEnv\Scripts\activate
+
+(TestEnv) C:\Users\mswei\Desktop\python_stack\my_environments>pip3 list
+Package    Version
+---------- -------
+pip        21.1.1
+setuptools 56.0.0
+
+(TestEnv) C:\Users\mswei\Desktop\python_stack\my_environments>deactivate
+C:\Users\mswei\Desktop\python_stack\my_environments>pip3 list
+Package    Version
+---------- -------
+pip        21.1.1
+setuptools 56.0.0
+
+C:\Users\mswei\Desktop\python_stack\my_environments>call myEnvironments/TestEnv/bin/activate
+'myEnvironments' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\mswei\Desktop\python_stack\my_environments>cd
+C:\Users\mswei\Desktop\python_stack\my_environments
+
+C:\Users\mswei\Desktop\python_stack\my_environments>call my_environments/TestEnv/bin/activate
+'my_environments' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\mswei\Desktop\python_stack\my_environments>cd.
+
+C:\Users\mswei\Desktop\python_stack\my_environments>cd..
+
+C:\Users\mswei\Desktop\python_stack>call my_environments/TestEnv/bin/activate
+'my_environments' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\mswei\Desktop\python_stack>call my_environments
+'my_environments' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\mswei\Desktop\python_stack>cd my_environments
+
+C:\Users\mswei\Desktop\python_stack\my_environments>call my_environments/TestEnv/Scripts/activate
+'my_environments' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\mswei\Desktop\python_stack\my_environments>cd..
+
+C:\Users\mswei\Desktop\python_stack>call my_environments/TestEnv/Scripts/activate
+
+(TestEnv) C:\Users\mswei\Desktop\python_stack>call my_environments/TestEnv/bin/activate
+'my_environments' is not recognized as an internal or external command,
+operable program or batch file.
+
+(TestEnv) C:\Users\mswei\Desktop\python_stack>pip install Django==2.2.4
+Collecting Django==2.2.4
+  Downloading Django-2.2.4-py3-none-any.whl (7.5 MB)
+     |████████████████████████████████| 7.5 MB 226 kB/s
+Collecting pytz
+  Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
+     |████████████████████████████████| 510 kB 345 kB/s
+Collecting sqlparse
+  Downloading sqlparse-0.4.1-py3-none-any.whl (42 kB)
+     |████████████████████████████████| 42 kB 469 kB/s
+Installing collected packages: sqlparse, pytz, Django
+Successfully installed Django-2.2.4 pytz-2021.1 sqlparse-0.4.1
+
+(TestEnv) C:\Users\mswei\Desktop\python_stack>pip list
+Package    Version
+---------- -------
+Django     2.2.4
+pip        21.1.1
+pytz       2021.1
+setuptools 56.0.0
+sqlparse   0.4.1
+
+(TestEnv) C:\Users\mswei\Desktop\python_stack>pip3 list
+Package    Version
+---------- -------
+Django     2.2.4
+pip        21.1.1
+pytz       2021.1
+setuptools 56.0.0
+sqlparse   0.4.1
+
+(TestEnv) C:\Users\mswei\Desktop\python_stack>pip freeze
+Django==2.2.4
+pytz==2021.1
+sqlparse==0.4.1
+
+(TestEnv) C:\Users\mswei\Desktop\python_stack>pip list
+Package    Version
+---------- -------
+Django     2.2.4
+pip        21.1.1
+pytz       2021.1
+setuptools 56.0.0
+sqlparse   0.4.1
+
+(TestEnv) C:\Users\mswei\Desktop\python_stack>cd desktop
+The system cannot find the path specified.
+
+(TestEnv) C:\Users\mswei\Desktop\python_stack>cd..
+
+(TestEnv) C:\Users\mswei\Desktop>pip freeze > requirements.txt
+
+(TestEnv) C:\Users\mswei\Desktop>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+(TestEnv) C:\Users\mswei\Desktop>dir
+ Volume in drive C is Windows-SSD
+ Volume Serial Number is F066-6FE5
+
+ Directory of C:\Users\mswei\Desktop
+
+05/05/2021  11:01 AM    <DIR>          .
+05/05/2021  11:01 AM    <DIR>          ..
+05/05/2021  10:16 AM    <DIR>          AXSOS
+05/03/2021  02:16 PM    <DIR>          Codingdojo
+03/28/2021  11:29 AM             2,242 Discord.lnk
+05/03/2021  12:23 PM             2,366 GitHub Desktop.lnk
+03/25/2021  10:42 PM    <DIR>          Holy Quran
+05/03/2021  05:51 AM               386 Jquerry.html
+04/28/2021  03:38 PM               330 key words.txt
+11/22/2020  01:12 PM           247,478 McAfee.pdf
+04/27/2021  09:55 AM    <DIR>          Movies
+04/26/2021  10:34 PM               351 Practise.html
+05/05/2021  10:03 AM    <DIR>          python_stack
+05/05/2021  11:01 AM                46 requirements.txt
+04/27/2021  09:54 AM    <DIR>          Resume
+04/27/2021  09:56 AM    <DIR>          Shortcut's
+05/04/2021  06:17 AM            10,935 Study Tracker.xlsx
+04/29/2021  11:20 AM           165,684 Us.jfif
+04/01/2021  10:45 AM             1,553 Visual Studio Code - Insiders.lnk
+04/07/2021  04:18 PM             1,415 Visual Studio Code.lnk
+03/27/2021  10:22 PM             1,942 Zoom.lnk
+              12 File(s)        434,728 bytes
+               9 Dir(s)  789,789,638,656 bytes free
+
+(TestEnv) C:\Users\mswei\Desktop>pip list
+Package    Version
+---------- -------
+Django     2.2.4
+pip        21.1.1
+pytz       2021.1
+setuptools 56.0.0
+sqlparse   0.4.1
+
+(TestEnv) C:\Users\mswei\Desktop>pip freeze > requirments.txt
+
+(TestEnv) C:\Users\mswei\Desktop>pip3 list
+Package    Version
+---------- -------
+Django     2.2.4
+pip        21.1.1
+pytz       2021.1
+setuptools 56.0.0
+sqlparse   0.4.1
+
+(TestEnv) C:\Users\mswei\Desktop>pip uninstall Django
+Found existing installation: Django 2.2.4
+Uninstalling Django-2.2.4:
+  Would remove:
+    c:\users\mswei\desktop\python_stack\my_environments\testenv\lib\site-packages\django-2.2.4.dist-info\*
+    c:\users\mswei\desktop\python_stack\my_environments\testenv\lib\site-packages\django\*
+    c:\users\mswei\desktop\python_stack\my_environments\testenv\scripts\django-admin.exe
+    c:\users\mswei\desktop\python_stack\my_environments\testenv\scripts\django-admin.py
+Proceed (y/n)? n
+
+(TestEnv) C:\Users\mswei\Desktop>pip show Django
+Name: Django
+Version: 2.2.4
+Summary: A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+Home-page: https://www.djangoproject.com/
+Author: Django Software Foundation
+Author-email: foundation@djangoproject.com
+License: BSD
+Location: c:\users\mswei\desktop\python_stack\my_environments\testenv\lib\site-packages
+Requires: pytz, sqlparse
+Required-by:
+
+(TestEnv) C:\Users\mswei\Desktop>
