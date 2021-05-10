@@ -1,0 +1,26 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 970px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.box{
+    flex: 1;
+    background-color: blue;
+    min-height: 50px;
+    width: 30%;
+    margin: 10px;
+}
