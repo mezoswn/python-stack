@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h1>The Counter is {{counter}} </h1>
+    <h1>The real counter {{request.session.counter2}} </h1>
+    <form action="to/destroy" >
+        <button type="submit">CLEAR</button>
+    </form>
+    <br><br>
+    <form action="to/plustwo" >
+        <button type="submit">Plus Two</button>
+    </form>
+
+</body>
+</html>
