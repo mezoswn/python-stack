@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index Page</h1>
+    <h3>Create a User</h3>
+        <form action="/result" method='post'>
+            <label for="name">Your name:</label>
+            <input type="text"  name="name">
+            <br><br>
+            <label for="location">location:</label>
+            <select name="location">
+                <option value="Jerusalem">Jerusalem</option>
+                <option value="Nablus">Nablus</option>
+                <option value="Ramallah">Ramallah</option>
+                <option value="Beitlahem">Beitlahem</option>
+                <option value="Hebron">Hebron</option>
+                <option value="Jenin">Jenin</option>
+                <option value="Toulkarem">Toulkarem</option>
+                <option value="Qalqelia">Qalqelia</option>
+                <option value="Salfeet">Salfeet</option>
+            </select>
+            <br><br>
+            <label for="language">language:</label>
+            <select name="language" >
+              <option value="Python">Python</option>
+              <option value="HTML">HTML</option>
+              <option value="Java">Java</option>
+              <option value="C++">C++</option>
+            </select>
+            <br><br>
+            <label for="comment">comment</label>
+            <textarea name="comment"></textarea>
+            <br><br>
+            <input type="submit" value="Submit" >
+            <br><br>
+          
+    </form>
+</body>
+</html>
