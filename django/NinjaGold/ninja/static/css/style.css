@@ -1,0 +1,46 @@
+*{
+    padding: 0px;
+    margin: 0 auto;
+    background-color: turquoise;
+}
+main{
+    width: 800px;
+}
+.top{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.forms{
+    display:flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+form{
+    border: 2px solid black;
+    width: 200px;
+    height: 150px;
+    margin: 20px;
+    
+    
+}
+form h1{
+    color: blue;
+    text-align: center;
+}
+form h4{
+    text-align: center;
+    color: green;
+}
+form button{
+    margin-top: 70px;
+    margin-left: 45px;
+    background-color: gold;
+    color: red;
+    border-radius: 3px;
+}
+textarea{
+    width: 800px;
+    height: 200px;
+    background-color: white;
+    text-align: start;
+}
