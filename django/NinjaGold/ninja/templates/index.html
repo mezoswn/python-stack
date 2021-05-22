@@ -50,9 +50,9 @@
             overflow-y:scroll; border:solid black 1px;">
                 {%for i in request.session.log%}
                 {%if i.0  == 'o'%}
-                <p style="color: red;">{{i}}</p>
+                <p style = "color: red;"> {{i}} </p>
                 {%else%}
-                <p style="color: green;">{{i}}</p>
+                <p style = "color: green;"> {{i}} </p>
                 {%endif%}
                 {%endfor%}
             </div>
