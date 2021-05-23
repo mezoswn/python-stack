@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos and Ninjas</title>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>Add a Dojo</h1>
+            <form action="/add_dojo" method="post">
+            {% csrf_token %}
+            <label>Name:
+                <input type="text" name="f_name" placeholder="School name">
+            </label>
+            <label>City:
+                <input type="text" name="city" placeholder="Your City">
+            </label>
+            <label>state:
+                <input type="text" name="state" placeholder="Your State">
+            </label>
+
+            <button type="submit">Add</button>        
+            </form>
+        </div>
+
+        <div>
+            <h1>Add a Ninja</h1>
+            <form action="/add_ninja" method="post">
+            {% csrf_token %}
+                <label>First Name:
+                    <input type="text" name="first_name" placeholder="First name">
+                </label>
+                <label>Last Name:
+                    <input type="text" name="last_name" placeholder="Last name">
+                </label>
+                <label>Dojo:
+                    <select name="dojo" id="dojo">
+                        {% for dojo in Dojos %}
+                        <option value="{{dojo.name}}">{{dojo.name}}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                <button type="submit">Add</button>        
+            </form>
+            <div class="context">
+                <form action="/delete" method="post">
+                {% csrf_token %}
+                    {% for dojo in Dojos %}
+                    <label>{{dojo.name}}</label> 
+                    <button type="submit" name= "delete" value="{{dojo.name}}">Delete</button>
+                    <ul>
+                        {% for ninja in dojo.ninjas.all %}
+                            <li>{{ninja.first_name}} {{ninja.last_name}}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </form>
+        </div>
+
+        </div>
+
+    </main>
+</body>
+</html>
