@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="main">
-        <div class="left">
+        <div class="field">
             <form action="addbook" method="POST">
                 {% csrf_token %}
                 <h1>Add A Book</h1>
@@ -27,7 +27,7 @@
                 <button type="submit">Add</button>
             </form>
         </div>
-        <div clas="right">
+        <div clas="tb">
             <table>
                 <tr>
                   <th>ID</th>
@@ -38,7 +38,7 @@
                 <tr>
                   <td>{{i.id}}</td>
                   <td>{{i.title}}</td>
-                  <td><a href="/books/{{i.id}}">View</aa></td>
+                  <td><a href="/books/{{i.id}}">View</a></td>
                 </tr>
                 {%endfor%}
               </table>

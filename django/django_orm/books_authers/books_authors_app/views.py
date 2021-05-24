@@ -1,4 +1,3 @@
-  
 from django.shortcuts import redirect, render,HttpResponse
 from books_authors_app.models import *
 # Create your views here.
@@ -30,7 +29,7 @@ def author(request,id):
     }
     return render(request,"author.html",context)
 def addauthor(request):
-    Authors.objects.create(first_name=request.POST['fname'],last_name=request.POST['lname'],notes=request.POST['notes'])
+    Authors.objects.create(first_name=request.POST['first_name'],last_name=request.POST['last_name'],notes=request.POST['notes'])
     return redirect('/')
 def addbookauthor(request,id):
     x=Authors.objects.get(id=id)
@@ -40,5 +39,5 @@ def addbookauthor(request,id):
 def addauthorbook(request,id):
     x=Books.objects.get(id=id)
     i=request.POST['id']
-    x.authors.add(Authors.objects.get(id=i))
+    x.books_authors.add(Authors.objects.get(id=i))
     return redirect('/books/'+str(id))

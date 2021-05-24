@@ -9,9 +9,9 @@
 <body>
     <h1>{{x.first_name}} {{x.last_name}}</h1>
     <h2>ID= {{x.id}}</h2>
-    <h2>Description:</h2>
+    <h2>Description:Good Writer</h2>
     <h3>{{x.notes}}</h3>
-    <h2>books:</h2>
+    <h2>Books:{{x.books_authors.title}}</h2>
     <ul>
         {%for i in x.books.values%}
         <li>{{i.title}}</li>
