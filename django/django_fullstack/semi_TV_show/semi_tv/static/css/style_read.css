@@ -1,0 +1,27 @@
+*{
+    width: 970px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+h1{
+    color: navy;
+}
+
+a {
+    color:blue;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+p{
+    font-weight: bold;
+    border: 1px dashed rgb(0, 119, 255);
+    width: 40%;
+    height: 5%;
+}
+
+p:hover{ background-color: lightskyblue;}
+

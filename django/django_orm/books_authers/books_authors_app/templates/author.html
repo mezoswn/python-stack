@@ -11,9 +11,9 @@
     <h2>ID= {{x.id}}</h2>
     <h2>Description:Good Writer</h2>
     <h3>{{x.notes}}</h3>
-    <h2>Books:{{x.books_authors.title}}</h2>
+    <h2>Books:{{x.Books.title}}</h2>
     <ul>
-        {%for i in x.books.values%}
+        {%for i in y%}
         <li>{{i.title}}</li>
         {%endfor%}
     </ul>

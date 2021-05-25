@@ -37,7 +37,8 @@ def addbookauthor(request,id):
     x.books.add(Books.objects.get(id=i))
     return redirect('/authors/'+str(id))
 def addauthorbook(request,id):
-    x=Books.objects.get(id=id)
+    x=Authors.objects.get(id=id)
+    y=x.book.all()
     i=request.POST['id']
     x.books_authors.add(Authors.objects.get(id=i))
     return redirect('/books/'+str(id))

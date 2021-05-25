@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read(one)</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_read.css'%}">
+</head>
+<body>
+    <div>
+    <a href="/shows">Go Back</a>
+    <br><br>
+    <h1>TV SHOW {{shows.id}}</h1>
+    <br><br><br>
+    <p>Title: {{shows.title}}</p>
+    <br>
+    <p>Network: {{shows.network}}</p>
+    <br>
+    <p>Release Date: {{shows.release_date}}</p>
+    <br>
+    <p>Description: {{shows.description}}</p>
+    <br><br><br><br><br>
+    <p>Last Update: {{shows.updated_at}}</p>
+    <br><br>
+    <a href="/shows/{{shows.id}}/edit">Edit</a> | <a href="/destroy/{{shows.id}}">Delete</a>
+</div>
+</body>
+</html>
