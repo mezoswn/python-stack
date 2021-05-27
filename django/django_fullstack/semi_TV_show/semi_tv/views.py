@@ -1,5 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from . models import *
+from time import strftime
+from django.contrib import messages
+
 
 # Create your views here.
 def shows(request):
@@ -14,14 +17,41 @@ def index(request):
 def create(request):
     return render(request,'create_page.html')
 
+
 def add(request):
-        if request.method == "POST":
-            Show.objects.create(title=request.POST["title"], network=request.POST["network"], release_date=request.POST["date"], description=request.POST["desc"] )
+        title = request.POST['title']
+        network = request.POST['network']
+        release_date = request.POST['release_date']
+        description = request.POST['description']
         
+        last = Show.objects.last()
+        id = last.id
+        time = Show.objects.get(id=id).release_date
         context = {
-        "id" : Show.objects.last(),
-            }
-        return redirect('/shows/'+str(context['id'].id))
+        "shows": Show.objects.get(id=id),
+        "release_date": time.strftime('%Y-%m-%d')
+        }
+        
+        errors = Show.objects.basic_validator(request.POST)
+
+        if len(errors) > 0:
+        
+            for key, value in errors.items():
+                messages.error(request, value)
+            
+            return redirect('/')
+        else:
+            # messages.success(request, "Show successfully updated")
+            Show.objects.create(title=title,network=network,release_date=release_date,description=description)
+        return redirect('showtv/'+str(id))
+        
+        # if request.method == "POST":
+        #     Show.objects.create(title=request.POST["title"], network=request.POST["network"], release_date=request.POST["date"], description=request.POST["desc"] )
+        
+        # context = {
+        # "id" : Show.objects.last(),
+        #     }
+        # return redirect('/shows/'+str(context['id'].id))
 
 def read(request,id):
     context = {
@@ -35,13 +65,15 @@ def edit(request,id):
         x.title = request.POST['title']
         x.network = request.POST['network']
         x.description = request.POST['desc']
-        x.date = request.POST['release_date']
+        x.release_date = request.POST['release_date']
         x.save()
     return redirect("/shows/"+str(id))
 
 def update(request,id):
+    time = Show.objects.get(id=id).release_date
     context = {
         "shows": Show.objects.get(id=id),
+        "date": time.strftime('%Y-%m-%d')
     }
     return render(request,'update_page.html',context)
 

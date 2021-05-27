@@ -10,6 +10,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style_update.css'%}">
 </head>
 <body>
+    {% if messages %}
+        <ul class="messages">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+    {% endif %}
     <a href="/shows">Go Back</a>
     <br><br>
     <h1>Edit Show</h1>
@@ -22,7 +29,7 @@
         <p>Network</p>
         <input name="network" type="text" value="{{shows.network}}">
         <p>Release Date</p>
-        <input name="date" type="date" value="{{shows.release_date}}">
+        <input name="release_date" type="date" value="{{date}}">
         <br>
         <label for="Description">Description :<br>
             <textarea id="Description" name="desc">{{shows.description}}</textarea>
