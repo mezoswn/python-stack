@@ -25,14 +25,14 @@
     <form action="/{{shows.id}}" method="POST">
         {% csrf_token %}
         <p>Title</p>
-        <input name="title" type="text" value="{{shows.title}}">
+        <input name="title1" type="text" value="{{shows.title}}">
         <p>Network</p>
-        <input name="network" type="text" value="{{shows.network}}">
+        <input name="network1" type="text" value="{{shows.network}}">
         <p>Release Date</p>
-        <input name="release_date" type="date" value="{{date}}">
+        <input name="release_date1" type="date" value="{{date}}">
         <br>
         <label for="Description">Description :<br>
-            <textarea id="Description" name="desc">{{shows.description}}</textarea>
+            <textarea id="Description" name="desc1">{{shows.description}}</textarea>
         </label>
         <br>
         <button type="submit">Update</button>

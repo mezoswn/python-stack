@@ -4,6 +4,7 @@ from time import strftime
 from django.contrib import messages
 
 
+
 # Create your views here.
 def shows(request):
     context = {
@@ -23,7 +24,7 @@ def add(request):
         network = request.POST['network']
         release_date = request.POST['release_date']
         description = request.POST['description']
-        
+
         last = Show.objects.last()
         id = last.id
         time = Show.objects.get(id=id).release_date
@@ -39,11 +40,15 @@ def add(request):
             for key, value in errors.items():
                 messages.error(request, value)
             
-            return redirect('/')
+            return redirect('/shows/new')
         else:
             # messages.success(request, "Show successfully updated")
             Show.objects.create(title=title,network=network,release_date=release_date,description=description)
-        return redirect('showtv/'+str(id))
+        context = {
+        "id" : Show.objects.last(),
+            }
+        return redirect('/shows/'+str(context['id'].id))
+        # return redirect('showtv/'+str(id))
         
         # if request.method == "POST":
         #     Show.objects.create(title=request.POST["title"], network=request.POST["network"], release_date=request.POST["date"], description=request.POST["desc"] )
@@ -70,12 +75,26 @@ def edit(request,id):
     return redirect("/shows/"+str(id))
 
 def update(request,id):
+    errors = Show.objects.basic_validator(request.POST)
+    if len(errors)>0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect("/shows/"+str(id))
+    else:
+        show = Show.objects.get(id = id)
+        show.title = request.POST['title1']
+        show.network = request.POST['network1']
+        show.description = request.POST['desc1']
+        show.save()
+        messages.success(request, "Show Successfully updated")
+
     time = Show.objects.get(id=id).release_date
     context = {
         "shows": Show.objects.get(id=id),
         "date": time.strftime('%Y-%m-%d')
     }
     return render(request,'update_page.html',context)
+    
 
 def destroy(request,id):
     Show.objects.get(id=id).delete()

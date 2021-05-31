@@ -14,7 +14,14 @@ class BlogManager(models.Manager):
         if len(postData['description']) < 10:
             errors["description"] = "Show Description should be at least 10 characters"
         return errors
+
+
+
+
 # Create your models here.
+
+
+
 class Show(models.Model):
     title = models.CharField(max_length=255)
     network = models.CharField(max_length=45)

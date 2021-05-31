@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>CodingDojo Wall</h2>
+    <p style="margin-left: 450px;">Succsess ! Welcome Mr {{user.fname}} !</p>
+    <a href="/logout" style="margin-top: 12px;">Log off</a>
+</div>
+<hr>
+</head>
+<body>
+    <div class="message">
+    <form action="message" method="POST">
+        {% csrf_token %} 
+        <textarea name="messagearea" id="messagearea" cols="100" rows="10" style="margin-top: 30px;"></textarea><br>
+        <input type="submit" value="Post a message" style="margin-left: 700px;" class="btn btn-success" >
+    </form>
+</div>
+{%for message in my_massege%}
+<div>
+    <p>{{message.user.first_name}} - {{message.created_at}} </p>
+    <p><a href="showComment/{{message.id}}">{{message.message}}</a></p>
+    <div>
+    <form action="delet_message/{{message.id}}">
+        <input type="submit" value="Delete Message" class="btn btn-info">
+    </form>
+</div>
+<div>
+{%endfor%}
+</body>
+</html>

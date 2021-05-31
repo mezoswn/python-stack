@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 style="border: 1px solid; width: 300px;text-align: center;margin-top: 10px;">{{Booktitle}}</h1>
+    </div>
+    <small>uploded by {{BookAuthor.first_name }} {{BookAuthor.last_name  }}</small><br>
+    <form action="/updatedes/{{bookid}}" method="POST">
+        {% csrf_token %}
+        
+        This book ID : {{bookid}}
+
+    <small>description : <input type="text" name="updatetext" id="update" value="{{desc}}"></small><br>
+    {% if uploaded_by.first_name == user.fname %}
+    <input type="submit" value="Update">
+    </form>
+    <form action="/deletedes" method="POST">
+        {% csrf_token %} 
+    <input type="submit" value="Delete" ">
+    </form>
+    {%endif%}
+    <div>
+        <h1>Users Who like this Book :</h1>
+        <ul>
+            
+            {%for users in userswholike%}
+            <li>{{users.first_name}}</li>
+            {%endfor%}
+            
+        </ul>
+    </div>
+    {%if not userswholike%}
+    <a href="/addFavarit">Add to Favoraite</a>
+    {%endif%}
+    {%if userswholike %}
+    <a href="/unfavarit/{{bookid}}">unfavorite</a>
+    {%endif%}
+    <a href="/welcome">Back</a>
+    <br><br>
+    <form action="logout" method="POST">
+        {% csrf_token %} 
+        <input type="submit" value="Logout">
+    </form>
+</body>
+</html>

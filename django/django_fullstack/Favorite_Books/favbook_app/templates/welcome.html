@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome!, {{user.fname}}</h2>
+    <hr>
+    <h3>Add a Favorite Book</h3>
+    <form action="addBook/{{user.userid}}" method="POST">
+    Title : <input type="text" name="titletext" ><br><br>
+    Description : <textarea name="desc" id="desc" ></textarea>
+        {% csrf_token %}
+    <input type="submit" value="Add" >
+    </form>
+
+    <div>
+        <h3>All Books</h3>
+        {% for book in books%}
+        <p><a href="/showbook/{{book.id}}">{{book.title}}</a></p>
+        <hr>
+        <small>(Added by {{book.uploaded_by.first_name}})</small><br>
+        {%if book.users_who_like.first.first_name == user.fname%}
+        <small>You like this!, this is one of you favorites</small>
+        {%endif%}
+        {%if  book.users_who_like.first.first_name != user.fname%}
+        <small>This is not your favorite!</small>
+        {%endif%}
+        <form action="deleteBook/{{book.id}}" method="POST">
+            {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <a href="/welcome">Back</a>
+        {%endfor%}
+    </div>
+    <br><br><br>
+    <form action="logout" method="POST">
+        {% csrf_token %} 
+        <input type="submit" value="Logout">
+    </form>
+</body>
+</html>
